@@ -49,7 +49,22 @@ recordError($conn->error);//record error to error.log file
     //show table headers
     echo "<tr>";
     foreach ($info as $val){
+
+      switch ($val->name) {
+        case 'Directive ID':
+        $new_val = 'Directorate id';
+        echo "<td class='thead'><b>" .$new_val . "</b></td>";
+          break;
+        // case 'SBU/CSU ID':
+        // $new_sbu = 'SBU/CSU Abbreviation';
+        // echo "<td class='thead'><b>" .$new_sbu . "</b></td>";
+        //   break;
+        default:
         echo "<td class='thead'><b>" .$val->name . "</b></td>";
+          break;
+      }
+    
+       
     }
     echo "</tr>"; 
 
@@ -70,16 +85,7 @@ recordError($conn->error);//record error to error.log file
           if ($rtype->type == 10){ //10 is a date type
             echo "<td><input class='date_input' type='date' placeholder='yyyy-mm-dd' value ='" .$value. "'/></td>";
           } 
-          // else if($rtype->name == 'Action Party'){//if the field name is action party
-            
-          //   echo "<td>";//create row
-          //   echo '<select name="SBU/CSU" class="SBUCSU">';//create select element for each column
-          //   SBUTable();//Call the values in option form.
-          //   echo '</select>';
-          //   echo "</td>";
-
-
-          // }
+          
           else{
             echo "<td>" . $value .  "</td>";
           }
@@ -88,8 +94,8 @@ recordError($conn->error);//record error to error.log file
 
         }
         //The delete button for each row in each table
-        echo "<td contenteditable='false'><button  value='". $primaryKey . "'class='delete' >Delete</button></td>";
-        //onclick='delTable(this.value, `".$databaseName."`); return false;'
+        echo "<td contenteditable='false'><button  value='". $primaryKey . "'onclick='delTable(this.value, `".$databaseName."`); return false;' class='delete' >Delete</button></td>";
+
        
     }
     echo "</tr>";

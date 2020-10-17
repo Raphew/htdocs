@@ -183,3 +183,69 @@ Stack trace:
 #0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
 #1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
 #2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:34 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:34 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:37 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:37 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:41 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:41 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:42 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:42 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:43 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:03:43 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:07:33 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:07:33 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:07:34 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:07:34 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:07:35 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:07:35 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:19:13 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:19:13 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:20:16 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:20:16 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:50
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(13): addRecord('directive table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:36:25 pm [Error]: 0  File(/NTB%20Databse/uploadData.php)
+Saturday, October 17th, 2020 - 13:36:25 pm [Error]: Error: Call to a member function bind_param() on boolean in C:\xampp\htdocs\NTB Databse\uploadData.php:158
+Stack trace:
+#0 C:\xampp\htdocs\NTB Databse\openUploadDB.php(19): addRecord3('sbu/csu table')
+#1 C:\xampp\htdocs\NTB Databse\uploadData.php(3): require('C:\\xampp\\htdocs...')
+#2 {main} File(/NTB%20Databse/uploadData.php)

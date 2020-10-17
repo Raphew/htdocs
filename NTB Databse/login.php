@@ -3,8 +3,8 @@ include 'recordError.php';//function that cointains error file
 
   $db_hostname = 'localhost';
   $db_database = 'ntb directive register';
-  $db_username = 'hanif';
-  $db_password = 'hanif_mysql';
+  $db_username = 'raphew';
+  $db_password = 'raphew.sql';
   
   $conn = new mysqli($db_hostname, $db_username, $db_password);
   
