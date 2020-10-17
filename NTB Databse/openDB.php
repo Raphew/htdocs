@@ -33,5 +33,5 @@ if($_GET['document'] == "SBUoptions"){
 //Delete the tables
 if($_GET['document'] == "delete"){
     delvalues($_GET['database'], 'ID', $_GET['deletekey']);
-  } 
+} 
 ?>

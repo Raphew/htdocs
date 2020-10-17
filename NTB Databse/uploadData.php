@@ -46,8 +46,8 @@ function addRecord($databaseName){ //in the other script add addRecord('directiv
         }
       }
 
-      $sql = $conn->prepare("INSERT INTO `$databaseName` (`Directive Description`, `Action Party`, `Directive Date`, `NTB Meeting Number`, `Directive Deadline`, `Revert Date`, `Remark`, `Status Update`, `SBU/CSU ID`) VALUES(?,?,?,?,?,?,?,?,?)");
-      $sql->bind_param('sssissssi', $description, $party, $directiveDate, $meetingNum, $directiveDeadline, $revertDate, $remark, $status, $sbu_id);
+      $sql = $conn->prepare("INSERT INTO `$databaseName` (`Directive Description`, `Action Party`, `Directive Date`, `NTB Meeting Number`, `Directive Deadline`, `Revert Date`, `Remark`, `Status Update`) VALUES(?,?,?,?,?,?,?,?)");
+      $sql->bind_param('sssissss', $description, $party, $directiveDate, $meetingNum, $directiveDeadline, $revertDate, $remark, $status);
       $sql->execute();
       echo "Added to database";
       

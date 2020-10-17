@@ -19,9 +19,9 @@ function showTime() {
     var meridian;
 
 
-    if (currentHour >= 12 && currentHour < 24) {//if its betweeen 12pm and 12am, the meridian changes
+    if (currentHour >= 12 && currentHour < 24) { //if its betweeen 12pm and 12am, the meridian changes
         currentHour = currentHour - 12;
-        if (currentHour == '0') {//if it is noon the hour changes to 12pm
+        if (currentHour == '0') { //if it is noon the hour changes to 12pm
             currentHour = '12';
         }
         meridian = 'pm';
@@ -32,7 +32,7 @@ function showTime() {
     //console.log(currentMinute);
 
     if (currentMinute < 10) { //if the seconds is less than 10, it adds 0 at the begining of the minute value
-        currentMinute = '0' + currentMinute;//addition of 0, check for error later 
+        currentMinute = '0' + currentMinute; //addition of 0, check for error later 
 
     }
     var Totaltime = currentHour + ':' + currentMinute + ' ' + meridian;
@@ -41,7 +41,7 @@ function showTime() {
     console.log(Totaltime);
     document.querySelector('#showtime').innerHTML = '<b>' + Totaltime + '</b>';
 
-    setTimeout(function () {
+    setTimeout(function() {
         showTime();
     }, 15000); //update after every 15 seconds
 
@@ -54,7 +54,7 @@ function showTime() {
 
 function getTable() { //sends request to the database and waits for response
     for (let index = 1; index < 5; index++) { //Assumed number of tables is 4
-        downloadHTML('../NTB Databse/database.php?document=table' + index, function (result) { //Directive Table
+        downloadHTML('../NTB Databse/database.php?document=table' + index, function(result) { //Directive Table
             var table = document.getElementById('tableResult' + index);
             table.innerHTML = result; //render result to html
 
@@ -99,13 +99,13 @@ function addRecord(tableIDV, divTable, buttonID) {
     //To render the SBU/CSU options to the upload values, from the values in the database table SBU/CSU
 
     if (tableIDV == 'addF') { //If it is the first table
-        downloadHTML('../NTB Databse/database.php?document=SBUoptions', function (result) { //Directive Table
+        downloadHTML('../NTB Databse/database.php?document=SBUoptions', function(result) { //Directive Table
             var table = document.getElementById('sbuOptions');
             table.innerHTML = result; //render result to html
 
         });
     } else if (tableIDV == 'addF2') { //If it is the second table
-        downloadHTML('../NTB Databse/database.php?document=SBUoptions', function (result) { //SBU/CSU Table
+        downloadHTML('../NTB Databse/database.php?document=SBUoptions', function(result) { //SBU/CSU Table
             var table = document.getElementById('sbuOptions2');
             table.innerHTML = result; //render result to html
 
@@ -114,18 +114,18 @@ function addRecord(tableIDV, divTable, buttonID) {
 }
 
 //Validating each input against the main validator
-var tester;//global test value 
+var tester; //global test value 
 
 function alertDOM(error, inputClassName) {
     var input = document.getElementsByClassName(inputClassName);
 
 
-    Array.from(input).forEach(function (element, index, array) {
+    Array.from(input).forEach(function(element, index, array) {
         tester = false;
 
-         console.log(element.value);//name of value of element
+        console.log(element.value); //name of value of element
         // console.log(element.name);//name of element
-         console.log(element.type);//type of element
+        console.log(element.type); //type of element
         //console.log(element.className);  
 
 
@@ -134,17 +134,17 @@ function alertDOM(error, inputClassName) {
             if (element.value.length < 120) {
                 tester = true;
                 error.innerHTML = '';
-                console.log(element.value+' is okay.');
+
 
             } else {
                 tester = false;
                 error.innerHTML = '<b>Enter a valid text</b>';
             }
         } else if (element.type == 'number') { //if input is a number
-             if (element.value.length < 9) {
+            if (element.value.length < 9) {
                 tester = true;
                 error.innerHTML = '';
-                console.log(element.value+' is okay.');
+
             } else {
                 tester = false;
                 error.innerHTML = '<b>Enter a valid number</b>';
@@ -156,22 +156,22 @@ function alertDOM(error, inputClassName) {
             if (element.value.length < 11) {
                 tester = true;
                 error.innerHTML = '';
-                console.log(element.value+' is okay.');
+
             } else {
                 tester = false;
                 error.innerHTML = '<b>Enter a valid date</b>';
 
             }
-        }else if(element.type == 'select-one'){
+        } else if (element.type == 'select-one') {
             if (element.value != '') {
                 tester = true;
                 error.innerHTML = '';
-                console.log(element.value+' is selected.');
+                console.log(element.value + ' is selected.');
             } else {
                 tester = false;
                 error.innerHTML = '<b>Enter a valid option</b>';
             }
-        }else {
+        } else {
             tester = false;
         }
 
@@ -185,36 +185,37 @@ function uploadValues(formElem, databasename) {
     if (tester == true) {
         console.log('Talking to the server...');
 
-        var newdbname = document.getElementById(databasename).firstElementChild.id;//get form element id then returns the id of the child element which is H2 id
-        
-        var dataF = new FormData(formElem); //create a form array list to send to the server
-        dataF.append('DatabaseName', newdbname);//appends the name of the database and sends it to the validor to check for the database to add to
-        console.log(newdbname);
-        
+        var newdbname = document.getElementById(databasename).firstElementChild.id; //get form element id then returns the id of the child element which is H2 id
 
-        downloadHTMLPost('../NTB Databse/uploadData.php', dataF, function (result) {
+        var dataF = new FormData(formElem); //create a form array list to send to the server
+        dataF.append('DatabaseName', newdbname); //appends the name of the database and sends it to the validor to check for the database to add to
+        console.log(newdbname);
+
+
+        downloadHTMLPost('../NTB Databse/uploadData.php', dataF, function(result) {
 
             //spanresult.innerHTML = result; //if an error occur from the database or any reply from the database
- 
-            if (result.includes('Added')){
-                alert(result);//Displays the result in an alert form
-                location.reload();
-           }else{
-               //if an error occur from the database or any reply from the database
-            
-            var error_span = document.createElement('p');//create element for error
-            error_span.classList.add('derror');//adds the error class
-            var span_error =  document.getElementById(databasename).parentElement.appendChild(error_span);//parent element to add error element
-            span_error.append(result);//append result from database
 
-           }
-          
+            if (result.includes('Added')) {
+                alert(result); //Displays the result in an alert form
+                location.reload();
+            } else {
+                //if an error occur from the database or any reply from the database
+
+                var error_span = document.createElement('p'); //create element for error
+                error_span.classList.add('derror'); //adds the error class
+                var span_error = document.getElementById(databasename).parentElement.appendChild(error_span); //parent element to add error element
+                console.log(result);
+                span_error.append(result); //append result from database
+
+            }
+
         });
     } else {
-        var error_span = document.createElement('p');//create element for error
-        error_span.classList.add('derror');//adds the error class
-        var span_error =  document.getElementById(databasename).parentElement.appendChild(error_span);//parent element to add error element
-        span_error.append('One or more fields are without values. Input values!');//append result from database
+        var error_span = document.createElement('p'); //create element for error
+        error_span.classList.add('derror'); //adds the error class
+        var span_error = document.getElementById(databasename).parentElement.appendChild(error_span); //parent element to add error element
+        span_error.append('One or more fields are without values. Input values!'); //append result from database
     }
 
 
@@ -225,23 +226,23 @@ function uploadValues(formElem, databasename) {
 
 
 function delTable(value, databasename) {
-    
+
     var con = confirm("Are you sure you want to delete this field?");
     if (con == true) {
         console.log('Deleting value...');
 
-        downloadHTML('../NTB Databse/database.php?document=delete&database=' + databasename + '&deletekey=' + value + '', function (result) {
-            
-            if(result.includes('Succesfully Deleted!')){
+        downloadHTML('../NTB Databse/database.php?document=delete&database=' + databasename + '&deletekey=' + value + '', function(result) {
+
+            if (result.includes('Succesfully Deleted!')) {
                 alert(result);
-               location.reload();
-            }else{
-                var error_span = document.createElement('p');//create element for error
-                error_span.classList.add('derror');//adds the error class
-                var span_error =  document.getElementById(databasename).parentElement.appendChild(error_span);//parent element to add error element
-                span_error.append(result);//append result from database
+                location.reload();
+            } else {
+                var error_span = document.createElement('p'); //create element for error
+                error_span.classList.add('derror'); //adds the error class
+                var span_error = document.getElementById(databasename).parentElement.appendChild(error_span); //parent element to add error element
+                span_error.append(result); //append result from database
             }
-            
+
         });
 
     } else {
@@ -249,31 +250,33 @@ function delTable(value, databasename) {
     }
 }
 
+//**Note Module is not more avbailable */
+
 //Extra Module for localstorage
-function localstore(nameID) { //To set the Value
-    var elem = document.getElementById(nameID).value;
-    //alert(elem);
-    console.log(elem);
+// function localstore(nameID) { //To set the Value
+//     var elem = document.getElementById(nameID).value;
+//     //alert(elem);
+//     console.log(elem);
 
-    if (window.localStorage) {
-        window.localStorage.setItem('name', elem);
-        console.log('The value has been set');
-    }
+//     if (window.localStorage) {
+//         window.localStorage.setItem('name', elem);
+//         console.log('The value has been set');
+//     }
 
-}
+// }
 
-function localget() { //To get value after it has been set 
-    if (window.localStorage) {
-        var valueGet = window.localStorage.getItem('name');
-        var location = document.getElementById('location');
+// function localget() { //To get value after it has been set 
+//     if (window.localStorage) {
+//         var valueGet = window.localStorage.getItem('name');
+//         var location = document.getElementById('location');
 
-        if (valueGet == null) {
-            location.value = location.firstElementChild.value;
-            console.log('options are empty');
-        } else {
-            location.value = valueGet;
-            console.log(valueGet);
-            // window.localStorage.clear('name');
-        }
-    }
-}
+//         if (valueGet == null) {
+//             location.value = location.firstElementChild.value;
+//             console.log('options are empty');
+//         } else {
+//             location.value = valueGet;
+//             console.log(valueGet);
+//             // window.localStorage.clear('name');
+//         }
+//     }
+// }
